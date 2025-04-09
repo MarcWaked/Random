@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Job Match Video Calls</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS file -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-peer@9.10.0/simple-peer.min.js"></script> <!-- For WebRTC -->
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#matches">Matches</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Welcome to JobMatch</h1>
+        <p>Connect with recruiters or job seekers via random video calls!</p>
+        <button onclick="window.location.href='#login'">Get Started</button>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login">
+        <h2>Login or Sign Up</h2>
+        <form action="/login" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#signup">Sign Up</a></p>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile">
+        <h2>Your Profile</h2>
+        <form>
+            <label for="bio">Bio:</label>
+            <textarea id="bio" placeholder="Describe your experience, skills, etc."></textarea>
+            <label for="preferences">Job Preferences:</label>
+            <input type="text" id="preferences" placeholder="e.g., Location, Industry, Job Type">
+            <button type="submit">Save Profile</button>
+        </form>
+    </section>
+
+    <!-- Random Video Call Section -->
+    <section id="matches">
+        <h2>Find a Match</h2>
+        <p>Start a random video call with a recruiter or job seeker!</p>
+        <button id="startCallButton">Start Random Call</button>
+        <div id="videoCallSection" style="display:none;">
+            <h3>Video Call</h3>
+            <video id="localVideo" autoplay muted></video>
+            <video id="remoteVideo" autoplay></video>
+            <button id="endCallButton">End Call</button>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 JobMatch. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- External JavaScript file -->
+</body>
+</html>
